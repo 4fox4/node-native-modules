@@ -1,0 +1,14 @@
+{
+  "name": "test-addon",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "houlekhi",
+  "license": "ISC",
+  "dependencies": {
+    "node-addon-api": "^0.3.4"
+  }
+}
