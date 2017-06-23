@@ -7,14 +7,24 @@ void				Method(const v8::FunctionCallbackInfo<v8::Value>& args)
 	v8::HandleScope	scope(isolate);
 
 	int i = 0;
-	while (i < 100000000) {
-		i++;
+	int nb_ops = 0;
+	int loop_state = 0;
+	while (loop_state < 4)
+	{
+		while (i < 100000000)
+		{
+			i++;
+			nb_ops++;
+		}
+		while (i > 0)
+		{
+			i--;
+			nb_ops++;
+		}
+		loop_state++;
 	}
-	while (i > 0) {
-		i--;
-	}
-
-	args.GetReturnValue().Set(v8::String::NewFromUtf8(isolate, "coco c++"));
+	// args.GetReturnValue().Set(v8::String::NewFromUtf8(isolate, "coco c++"));
+	args.GetReturnValue().Set(v8::Int32::New(isolate, nb_ops));
 }
 
 void				init(v8::Local<v8::Object> exports)

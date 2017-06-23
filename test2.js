@@ -1,10 +1,17 @@
 module.exports.test2 = function() {
 	var i = 0;
-	while (i < 100000000) {
-		i++;
+	var nbOps = 0;
+	var loopState = 0;
+	while (loopState < 4) {
+		while (i < 100000000) {
+			i++;
+			nbOps++;
+		}
+		while (i > 0) {
+			i--;
+			nbOps++;
+		}
+		loopState++;
 	}
-	while (i > 0) {
-		i--;
-	}
-	return "coco js!";
+	return nbOps;
 }
