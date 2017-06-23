@@ -12,7 +12,8 @@ DEFS_Debug := \
 	'-D_FILE_OFFSET_BITS=64' \
 	'-DBUILDING_NODE_EXTENSION' \
 	'-DDEBUG' \
-	'-D_DEBUG'
+	'-D_DEBUG' \
+	'-DV8_ENABLE_CHECKS'
 
 # Flags passed to all source files.
 CFLAGS_Debug := \
@@ -45,10 +46,10 @@ CFLAGS_OBJC_Debug :=
 CFLAGS_OBJCC_Debug :=
 
 INCS_Debug := \
-	-I/Users/houlekhi/.node-gyp/7.10.0/include/node \
-	-I/Users/houlekhi/.node-gyp/7.10.0/src \
-	-I/Users/houlekhi/.node-gyp/7.10.0/deps/uv/include \
-	-I/Users/houlekhi/.node-gyp/7.10.0/deps/v8/include
+	-I/Users/houlekhi/.node-gyp/8.1.2/include/node \
+	-I/Users/houlekhi/.node-gyp/8.1.2/src \
+	-I/Users/houlekhi/.node-gyp/8.1.2/deps/uv/include \
+	-I/Users/houlekhi/.node-gyp/8.1.2/deps/v8/include
 
 DEFS_Release := \
 	'-DNODE_GYP_MODULE_NAME=test' \
@@ -91,10 +92,10 @@ CFLAGS_OBJC_Release :=
 CFLAGS_OBJCC_Release :=
 
 INCS_Release := \
-	-I/Users/houlekhi/.node-gyp/7.10.0/include/node \
-	-I/Users/houlekhi/.node-gyp/7.10.0/src \
-	-I/Users/houlekhi/.node-gyp/7.10.0/deps/uv/include \
-	-I/Users/houlekhi/.node-gyp/7.10.0/deps/v8/include
+	-I/Users/houlekhi/.node-gyp/8.1.2/include/node \
+	-I/Users/houlekhi/.node-gyp/8.1.2/src \
+	-I/Users/houlekhi/.node-gyp/8.1.2/deps/uv/include \
+	-I/Users/houlekhi/.node-gyp/8.1.2/deps/v8/include
 
 OBJS := \
 	$(obj).target/$(TARGET)/test.o

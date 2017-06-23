@@ -1,5 +1,6 @@
 #include <node.h>
 #include <v8.h>
+#include <iostream>
 
 void				Method(const v8::FunctionCallbackInfo<v8::Value>& args)
 {
@@ -7,9 +8,9 @@ void				Method(const v8::FunctionCallbackInfo<v8::Value>& args)
 	v8::HandleScope	scope(isolate);
 
 	int i = 0;
-	int nb_ops = 0;
+	unsigned int nb_ops = 0;
 	int loop_state = 0;
-	while (loop_state < 4)
+	while (loop_state < 20)
 	{
 		while (i < 100000000)
 		{
@@ -23,8 +24,9 @@ void				Method(const v8::FunctionCallbackInfo<v8::Value>& args)
 		}
 		loop_state++;
 	}
+	std::cout << "test c++ std output" << std::endl;
 	// args.GetReturnValue().Set(v8::String::NewFromUtf8(isolate, "coco c++"));
-	args.GetReturnValue().Set(v8::Int32::New(isolate, nb_ops));
+	args.GetReturnValue().Set(v8::Integer::NewFromUnsigned(isolate, nb_ops));
 }
 
 void				init(v8::Local<v8::Object> exports)
